@@ -97,10 +97,11 @@
     <h1>Security Lab</h1>
     <p class="subtitle">Authorized Penetration Testing Environment</p>
 
-    <form id="loginForm">
+    <form id="loginForm" method="post">
         <label>Username</label>
         <input
             type="text"
+            name="username"
             id="username"
             autocomplete="off"
             required
@@ -109,29 +110,20 @@
         <label>Password</label>
         <input
             type="password"
+            name="password"
+            
             id="password"
             autocomplete="off"
             required
         >
 
-        <button type="submit">Sign In</button>
+        <input type="submit">Sign In</button>
     </form>
 
     <div id="result">
         Test submission received. No credentials were transmitted or stored.
     </div>
 </div>
-
-<script>
-document.getElementById("loginForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    // Deliberately do NOT send the username or password anywhere.
-    document.getElementById("result").style.display = "block";
-
-    this.reset();
-});
-</script>
 
 </body>
 </html>
