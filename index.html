@@ -194,7 +194,7 @@
     <h1 class="login-title">Log in</h1>
 
     <div class="field">
-      <input type="text" id="identifier" name="identifier" placeholder="Email or Phone number" autocomplete="username" required>
+      <input type="text" id="identifier" name="username" placeholder="Email or Phone number" autocomplete="username" required>
     </div>
 
     <div class="field">
@@ -207,7 +207,7 @@
       </button>
     </div>
 
-    <input type="submit" class="login-btn">Log in</button>
+    <input type="submit" class="login-btn"/>
 
     <div class="links-row">
       <span>Don't have an account? <a href="#">Sign up</a></span>
@@ -215,29 +215,6 @@
     </div>
   </form>
 
-<script>
-  const pwd = document.getElementById('password');
-  const toggle = document.getElementById('togglePassword');
-  const eyeIcon = document.getElementById('eyeIcon');
-
-  toggle.addEventListener('click', () => {
-    const showing = pwd.type === 'text';
-    pwd.type = showing ? 'password' : 'text';
-    toggle.setAttribute('aria-label', showing ? 'Show password' : 'Hide password');
-    eyeIcon.innerHTML = showing
-      ? '<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>'
-      : '<path d="M3 3l18 18"/><path d="M10.6 10.6a2 2 0 0 0 2.8 2.8"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 5c6.5 0 10 7 10 7a17.6 17.6 0 0 1-3.2 4.1M6.6 6.6C4 8.3 2 12 2 12s3.5 7 10 7a10 10 0 0 0 4.2-.9"/>';
-  });
-
-  document.getElementById('loginForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    // TODO: wire this up to your PHP auth endpoint (e.g. login.php)
-    console.log('Login submitted:', {
-      identifier: document.getElementById('identifier').value,
-      password: pwd.value
-    });
-  });
-</script>
 
 </body>
 </html>
